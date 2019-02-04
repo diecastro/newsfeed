@@ -1,0 +1,41 @@
+@import 'Variables';
+
+.notFound {
+  background-color: $subNavBackgroundColor;
+  border-top: 1px solid $lineColor;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  height: 420px;
+  width: 650px;
+  margin: 0 auto;
+  background: $backgroundColor;
+  border: 1px solid $lineColor;
+  -webkit-box-shadow: 7px 7px 0px 0px rgb(221, 221, 221);
+  -moz-box-shadow: 7px 7px 0px 0px rgb(221, 221, 221);
+  box-shadow: 7px 7px 0px 0px rgb(221, 221, 221);
+}
+
+.column {
+  width: 50%;
+}
+
+.heading {
+  font-family: $secondaryFontFamily;
+  font-weight: 800;
+  font-size: 40px;
+  margin: 0;
+}
+
+.iconStyles {
+  width: 300px !important;
+  height: 300px !important;
+}

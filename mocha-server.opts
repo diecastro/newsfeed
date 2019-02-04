@@ -1,0 +1,11 @@
+###
+### mocha options for server tests
+###
+
+./server/tests/**/*.js
+
+--timeout 10000
+--reporter spec
+--require should
+--require mocha.env.js
+--exit

@@ -1,0 +1,11 @@
+###
+### mocha options for server unit tests
+###
+
+./server/tests/unit/**/*.js
+
+--timeout 10000
+--reporter list
+--require should
+--require mocha.env.js
+--exit

@@ -1,0 +1,32 @@
+.linkAsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @extend %secondaryFontFamilySemiBold;
+  height: 52px;
+  text-transform: uppercase;
+  color: $backgroundColor;
+  background-color: $payAnywhereColor;
+  text-decoration: none;
+  z-index: 1;
+  align-self: flex-start;
+
+  span {
+    &:first-child {
+      padding: 0 20px;
+      font-weight: 700;
+    }
+    &:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $payAnywhereAlternativeColor;
+      padding: 0 15px;
+      height: 52px;
+    }
+  }
+  &:hover {
+    color: $backgroundColor;
+  }
+}
+

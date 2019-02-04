@@ -1,0 +1,154 @@
+:global body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+:global #app {
+  display: flex;
+  flex: 1;
+}
+
+:global .root {
+  display: flex;
+  flex: 1;
+}
+
+.toastr_box {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  width: 300px;
+  margin-right: 5px;
+  z-index: 1040;
+}
+
+:global .nav.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+.findMore {
+  margin-left: 10px;
+}
+
+:global .section-padding {
+  padding: 90px 0px;
+  @include phone {
+    padding: 30px 0;
+  }
+}
+
+:global .Layout {
+  width: 100%;
+}
+
+@include tablet {
+  .footer-logo-wrapper,
+  .footer-list,
+  .social-menu-wrapper {
+    padding: 15px 0;
+    border-right: 0;
+  }
+}
+
+:global .backdrop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1030;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+:global .error {
+  color: $negativeColor;
+}
+
+:global .footer-logo-wrapper,
+:global .footer-menu-wrapper {
+  height: 120px !important;
+}
+
+h1 {
+  @include font-size(40);
+}
+
+h5 {
+  @include font-size(25);
+}
+
+:global .hamburguerMenu {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  margin: 50px auto;
+  transform: rotate(0deg);
+  cursor: pointer;
+  background-color: transparent !important;
+  margin-bottom: 0;
+}
+
+:global .hamburguerMenu .span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+:global .hamburguerMenu span:nth-child(1) {
+  top: 0px;
+}
+
+:global .hamburguerMenu span:nth-child(2),
+:global .hamburguerMenu span:nth-child(3) {
+  top: 18px;
+}
+
+:global .hamburguerMenu span:nth-child(4) {
+  top: 36px;
+}
+
+:global .hamburguerMenu.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+:global .hamburguerMenu.open span:nth-child(2) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+:global .hamburguerMenu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+:global .hamburguerMenu.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+:global .flex {
+  display: flex;
+  @include tablet {
+    display: block;
+  }
+  @include phone {
+    display: block;
+  }
+}

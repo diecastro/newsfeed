@@ -1,33 +1,19 @@
-
-
-'use strict';
-
 const express = require('express'),
-  routes = require('./routes'),
   config = require('./config/app'),
-  client = require('./routes/client/index'),
-  router = express.Router();
+  client = require('./routes/client'),
+  router = express.Router(),
+  path = require('path');
 
-router.use(express.static(client.staticDir));
+const staticDir = path.resolve(__dirname, '../../client/dist');
 
-///////////////////////////////////////////////
-// robots.txt
-///////////////////////////////////////////////
-router.get('/robots.txt', routes.robots);
+router.use(express.static(staticDir));
 
-///////////////////////////////////////////////
-// API 404: Send if api route is not found
-///////////////////////////////////////////////
-router.get('/api/*', function (request, response) {
+router.get('/api/*', (request, response) => {
   response
     .status(config.status.notFound)
     .send({message: config.error.notFound});
 });
 
-//////////////////////////////////////////////////////////////
-// Wildcard: everything else gets sent to client for routing
-//////////////////////////////////////////////////////////////
 router.get('*', client.index);
 
 module.exports = router;
-

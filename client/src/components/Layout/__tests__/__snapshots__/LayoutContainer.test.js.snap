@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Layout/LayoutContainer Connected LayoutContainer should render correct snapshot 1`] = `
+<div
+  className="Layout"
+>
+  <div
+    className="backdrop hidden"
+  />
+  <Header
+    application={
+      Object {
+        "threatMetrixTemplate": "some text",
+      }
+    }
+    auth={
+      Object {
+        "isAuthenticated": false,
+        "isFetching": false,
+        "loginError": null,
+        "menuActive": false,
+        "newToken": null,
+        "signupError": null,
+        "tokenAutoRenew": false,
+        "tokenTermsRenew": null,
+      }
+    }
+    cartUpdateSuccess={[Function]}
+    checkTokenExpiration={[Function]}
+    clearApplicationStorage={[Function]}
+    clearNotification={[Function]}
+    getProspect={[Function]}
+    getThreatMetrixTags={[Function]}
+    location={
+      Object {
+        "pathname": "/somePath",
+        "query": Object {},
+      }
+    }
+    logoutUser={[Function]}
+    notifications={Array []}
+    openDialog={[Function]}
+    performCartAction={[Function]}
+    refreshToken={[Function]}
+    removeAllItemsFromBag={[MockFunction]}
+    router={Array []}
+    setProspectId={[Function]}
+    shoppingBag={
+      Object {
+        "accessories": Object {},
+        "finalized": false,
+        "plan": Object {
+          "planCode": 0,
+        },
+        "test": 123,
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    syncBag={[Function]}
+    title="myLayout"
+    toggleRefreshTokenDialog={[Function]}
+    toggleVisibilitySignInForm={[Function]}
+    userExperience={
+      Object {
+        "cart": Object {
+          "productIds": Array [],
+        },
+        "dispatch": undefined,
+        "isUpdatingCart": false,
+        "notifications": Array [],
+        "title": "myLayout",
+      }
+    }
+  >
+    <div
+      className="someChild"
+    />
+  </Header>
+  <div
+    application={
+      Object {
+        "threatMetrixTemplate": "some text",
+      }
+    }
+    auth={
+      Object {
+        "isAuthenticated": false,
+        "isFetching": false,
+        "loginError": null,
+        "menuActive": false,
+        "newToken": null,
+        "signupError": null,
+        "tokenAutoRenew": false,
+        "tokenTermsRenew": null,
+      }
+    }
+    cartUpdateSuccess={[Function]}
+    checkTokenExpiration={[Function]}
+    className="someChild"
+    clearApplicationStorage={[Function]}
+    clearNotification={[Function]}
+    getProspect={[Function]}
+    getThreatMetrixTags={[Function]}
+    location={
+      Object {
+        "pathname": "/somePath",
+        "query": Object {},
+      }
+    }
+    logoutUser={[Function]}
+    notifications={Array []}
+    openDialog={[Function]}
+    performCartAction={[Function]}
+    refreshToken={[Function]}
+    removeAllItemsFromBag={[MockFunction]}
+    router={Array []}
+    setProspectId={[Function]}
+    shoppingBag={
+      Object {
+        "accessories": Object {},
+        "finalized": false,
+        "plan": Object {
+          "planCode": 0,
+        },
+        "test": 123,
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    syncBag={[Function]}
+    title="myLayout"
+    toggleRefreshTokenDialog={[Function]}
+    toggleVisibilitySignInForm={[Function]}
+    userExperience={
+      Object {
+        "cart": Object {
+          "productIds": Array [],
+        },
+        "dispatch": undefined,
+        "isUpdatingCart": false,
+        "notifications": Array [],
+        "title": "myLayout",
+      }
+    }
+  >
+    <div
+      className="someChild"
+    />
+  </div>
+  <Footer />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "some text",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`components/Layout/LayoutContainer Prospect Id ppid should render correct snapshot 1`] = `
+<div
+  className="Layout"
+>
+  <div
+    className="backdrop hidden"
+  />
+  <Header
+    application={
+      Object {
+        "threatMetrixTemplate": "some text",
+      }
+    }
+    auth={
+      Object {
+        "isAuthenticated": false,
+        "isFetching": false,
+        "loginError": null,
+        "menuActive": false,
+        "newToken": null,
+        "signupError": null,
+        "tokenAutoRenew": false,
+        "tokenTermsRenew": null,
+      }
+    }
+    cartUpdateSuccess={[Function]}
+    checkTokenExpiration={[Function]}
+    clearApplicationStorage={[Function]}
+    clearNotification={[Function]}
+    getProspect={[Function]}
+    getThreatMetrixTags={[Function]}
+    location={
+      Object {
+        "query": Object {
+          "ppid": "777",
+        },
+        "search": "?ppid=777",
+      }
+    }
+    logoutUser={[Function]}
+    notifications={Array []}
+    openDialog={[Function]}
+    performCartAction={[Function]}
+    refreshToken={[Function]}
+    removeAllItemsFromBag={[MockFunction]}
+    router={
+      Array [
+        "shopping-bag",
+        "shopping-bag",
+      ]
+    }
+    setProspectId={[Function]}
+    shoppingBag={
+      Object {
+        "accessories": Object {},
+        "finalized": false,
+        "plan": Object {
+          "planCode": 0,
+        },
+        "test": 123,
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    syncBag={[Function]}
+    title="myLayout"
+    toggleRefreshTokenDialog={[Function]}
+    toggleVisibilitySignInForm={[Function]}
+    userExperience={
+      Object {
+        "cart": Object {
+          "productIds": Array [],
+        },
+        "dispatch": undefined,
+        "isUpdatingCart": false,
+        "notifications": Array [],
+        "title": "myLayout",
+      }
+    }
+  >
+    <div
+      className="someChild"
+    />
+  </Header>
+  <div
+    application={
+      Object {
+        "threatMetrixTemplate": "some text",
+      }
+    }
+    auth={
+      Object {
+        "isAuthenticated": false,
+        "isFetching": false,
+        "loginError": null,
+        "menuActive": false,
+        "newToken": null,
+        "signupError": null,
+        "tokenAutoRenew": false,
+        "tokenTermsRenew": null,
+      }
+    }
+    cartUpdateSuccess={[Function]}
+    checkTokenExpiration={[Function]}
+    className="someChild"
+    clearApplicationStorage={[Function]}
+    clearNotification={[Function]}
+    getProspect={[Function]}
+    getThreatMetrixTags={[Function]}
+    location={
+      Object {
+        "query": Object {
+          "ppid": "777",
+        },
+        "search": "?ppid=777",
+      }
+    }
+    logoutUser={[Function]}
+    notifications={Array []}
+    openDialog={[Function]}
+    performCartAction={[Function]}
+    refreshToken={[Function]}
+    removeAllItemsFromBag={[MockFunction]}
+    router={
+      Array [
+        "shopping-bag",
+        "shopping-bag",
+      ]
+    }
+    setProspectId={[Function]}
+    shoppingBag={
+      Object {
+        "accessories": Object {},
+        "finalized": false,
+        "plan": Object {
+          "planCode": 0,
+        },
+        "test": 123,
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    syncBag={[Function]}
+    title="myLayout"
+    toggleRefreshTokenDialog={[Function]}
+    toggleVisibilitySignInForm={[Function]}
+    userExperience={
+      Object {
+        "cart": Object {
+          "productIds": Array [],
+        },
+        "dispatch": undefined,
+        "isUpdatingCart": false,
+        "notifications": Array [],
+        "title": "myLayout",
+      }
+    }
+  >
+    <div
+      className="someChild"
+    />
+  </div>
+  <Footer />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "some text",
+      }
+    }
+  />
+</div>
+`;

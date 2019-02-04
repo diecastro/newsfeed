@@ -1,0 +1,11 @@
+###
+### mocha options for server integration tests
+###
+
+./server/tests/integration/**/*.js
+
+--timeout 10000
+--reporter list
+--require should
+--require mocha.env.js
+--exit
