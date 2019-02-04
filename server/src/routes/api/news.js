@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const newsService = require('../../services/news');
 
-router.post('/news', async (req, res, next) => {
+router.post('/news', passport.authenticate('jwt', {session: false}), async (req, res, next) => {
   newsService.addNews(req.body).then(result => {
     res.json(result);
   }).catch(error => {
@@ -18,7 +19,7 @@ router.get('/news/:page', async (req, res, next) => {
   })
 });
 
-router.delete('/news', async (req, res, next) => {
+router.delete('/news', passport.authenticate('jwt', {session: false}), async (req, res, next) => {
   newsService.deleteNews(req.body).then(result => {
     res.json(result);
   }).catch(error => {
@@ -26,7 +27,7 @@ router.delete('/news', async (req, res, next) => {
   });
 });
 
-router.put('/news', async (req, res, next) => {
+router.put('/news', passport.authenticate('jwt', {session: false}), async (req, res, next) => {
   newsService.updateNews(req.body).then(result => {
     res.json(result);
   }).catch(error => {

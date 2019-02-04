@@ -4,24 +4,21 @@ html
         meta(charset='UTF-8')
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='version' content=applicationVersion)
-        title='Device Portal'
+        title='News Feed'
         script.
-          const globalApplicationLabel = !{labelStringified};
-          const applicationVersion = '#{applicationVersion}';
-          const applicationVersionCommit = '#{applicationVersionCommit}';
-          const serverBaseUrl = window.location.protocol + "//" + window.location.host + "/api/";
-          const serverDomainUrl = window.location.protocol + "//" + window.location.host + "/";
-          const siteKey = !{siteKeyStringified};
-          const productionEnvironment = !{productionEnvironment};
-          const maintenanceEnabled = !{maintenanceEnabled};
+            const applicationVersion = '#{applicationVersion}';
+            const applicationVersionCommit = '#{applicationVersionCommit}';
+            const serverBaseUrl = window.location.protocol + "//" + window.location.host + "/api/";
+            const serverDomainUrl = window.location.protocol + "//" + window.location.host + "/";
+            const siteKey = !{siteKeyStringified};
+            const productionEnvironment = !{productionEnvironment};
         meta(name='viewport' content='width=device-width, height=device-height, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1')
         link(href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet')
         link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet')
         link(href='https://fonts.googleapis.com/css?family=Raleway:600,800&subset=latin-ext' rel='stylesheet')
         link(href='https://fonts.googleapis.com/css?family=Raleway:600,800&subset=latin-ext' rel='stylesheet')
         link(rel='stylesheet' href=css)
-        link(rel='shortcut icon' href=`/images/${label.assetIdentifier}/favicon.ico`)
         script(src='/lib/jsencrypt.min.js')
-    body(class=label.assetIdentifier)
+    body
         div(id='app')
         script(src=js)

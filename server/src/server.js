@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 const serverConfig = require('./config/app').server,

@@ -39,7 +39,7 @@ module.exports.deleteNews = async payload => {
 
 module.exports.updateNews = async payload => {
   try {
-    const alg0 = await NewsModel.findOneAndUpdate({_id: payload.id}, payload);
+    await NewsModel.findOneAndUpdate({_id: payload._id}, payload);
     return {message: 'Record Updated'};
   } catch (e) {
     logger.error(e);

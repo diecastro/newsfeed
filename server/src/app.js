@@ -12,30 +12,12 @@ const express = require('express'),
   logger = require('./lib/logger');
 
 require('./db');
-
-function assignRemoteIpAddress(req, res, next) {
-
-  req.xForwardFor = req.headers['x-forwarded-for'];
-  req.xRealIp = req.headers['x-real-ip'];
-  next()
-
-}
+require('./services/user');
 
 module.exports = function () {
-
-  morgan.token('xForwardFor', function getRemoteIpAddress(req) {
-    return req.xForwardFor
-  });
-
-  morgan.token('xRealIp', function getRemoteIpAddress(req) {
-    return req.xRealIp
-  });
-
   app.use(helmet());
-
   app.use(cookieParser());
   app.set('trust proxy', true);
-  app.use(assignRemoteIpAddress);
   app.use(morgan('[:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"', {'stream': logger.stream}));
   app.use(session({resave: false, saveUninitialized: false, secret: config.server.secret}));
   app.set('views', __dirname + '/views');
