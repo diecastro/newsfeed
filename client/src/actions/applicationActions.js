@@ -1,19 +1,14 @@
 import actionTypes from '../constants/actionTypes';
 import { CALL_API } from '../middleware/api';
 
-export function executeFinalizeApplicationTaskRequest() {
-
-  let key = localStorage.getItem('applicationId') || null;
-
-  let endpoint = `application/${key}/finalize`;
-
+export function getNews() {
+  const endpoint = '/news/1';
   return {
     [CALL_API]: {
       endpoint: endpoint,
+      authenticated: false,
       method: 'GET',
-      authenticated: true,
-      encrypted: false,
-      types: [actionTypes.executeFinalizeApplicationTaskRequest, actionTypes.executeFinalizeApplicationTaskSuccess, actionTypes.executeFinalizeApplicationTaskFailure]
+      types: [actionTypes.getNewsRequest, actionTypes.getNewsSuccess, actionTypes.getNewsFailure]
     }
   };
 }

@@ -19,7 +19,7 @@ export default class PageNotFound extends Component {
             <p>{'Maybe we messed up, or maybe you have fat fingers.'}</p>
             <p>{'Either way, this page does not exist.'}</p>
             <p>
-              <LinkButton  {...this.props} linkRoute={routes.home} >
+              <LinkButton  {...this.props} linkRoute={routes.news} >
                   {'BACK TO HOME'}
               </LinkButton>
             </p>

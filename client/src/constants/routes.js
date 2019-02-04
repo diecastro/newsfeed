@@ -1,7 +1,8 @@
 export default {
   home: '/',
   login: 'login',
-  admin:'/admin',
+  admin: 'admin',
   fourZeroFour: '404',
+  news: 'news'
 };
 

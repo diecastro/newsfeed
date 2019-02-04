@@ -19,7 +19,6 @@ function callApi(endpoint, method, authenticated, body, encrypted) {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded',
-      'agentId': globalAgentId,
       'requestDate': dateString,
       'csrf-token': helperGetCSRFCookieToken()
     }

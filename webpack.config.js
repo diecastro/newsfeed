@@ -85,7 +85,9 @@ module.exports = {
               loader: 'sass-loader',
               options: {
                 data: `@import '${path.resolve(__dirname, 'client', 'src', 'styles').replace(/\\/g, '/')}/Variables';
-                @import '${path.resolve(__dirname, 'client', 'src', 'styles').replace(/\\/g, '/')}/Mixins';`
+                @import '${path.resolve(__dirname, 'client', 'src', 'styles').replace(/\\/g, '/')}/Mixins';
+                @import '${path.resolve(__dirname, 'client', 'src', 'styles').replace(/\\/g, '/')}/Base';
+                `
               }
             },
           ],

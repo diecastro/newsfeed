@@ -17,13 +17,11 @@ export default class Root extends Component {
     return (
       <MuiThemeProvider theme={LabelUtil.getTheme()}>
         <Provider store={store}>
-          <div className='root'>
             <Router
-              onUpdate={() => window.scrollTo(0, 0)}
               history={history}
+              onUpdate={() => window.scrollTo(0, 0)}
               routes={routes}
             />
-          </div>
         </Provider>
       </MuiThemeProvider>
     );

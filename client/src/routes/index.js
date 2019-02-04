@@ -3,9 +3,9 @@ import { Route, Redirect, IndexRoute } from 'react-router';
 
 import PageNotFound from '../components/PageNotFound/PageNotFound';
 import Layout from '../components/Layout/LayoutContainer';
-import SelectExperience from '../components/SelectExperience/SelectExperienceContainer';
-import {UserAuthWrapper} from 'redux-auth-wrapper';
-import {routerActions} from 'react-router-redux';
+import NewsContainer from '../components/NewsContainer/NewsContainer';
+import { UserAuthWrapper } from 'redux-auth-wrapper';
+import { routerActions } from 'react-router-redux';
 
 import routes from '../constants/routes';
 
@@ -19,9 +19,9 @@ const UserIsAuthenticated = UserAuthWrapper({
 
 export default (
   <Route path={appRoutePrefix}>
-    <IndexRoute component={SelectExperience} />
-    {/*<Route path={appRoutePrefix} component={Layout}>*/}
-      {/*<Route path={appRoutePrefix + routes.equipment} component={EquipmentContainer} />*/}
+    {/*<IndexRoute component={SelectExperience} />*/}
+    <Route path={appRoutePrefix} component={Layout}>
+      <Route path={appRoutePrefix + routes.news} component={NewsContainer}/>
       {/*<Route path={appRoutePrefix + routes.plan} component={PlanContainer} />*/}
       {/*<Route path={appRoutePrefix + routes.shoppingBag} component={ShoppingBagContainer} />*/}
       {/*<Route path={appRoutePrefix + routes.clientSignUp} component={ClientSignUpContainer} />*/}
@@ -30,8 +30,8 @@ export default (
       {/*<Route path={appRoutePrefix + routes.thankYou} component={ThankYou} />*/}
       {/*<Route path={`${appRoutePrefix + routes.productDetail}/:productId`} component={ProductDetailContainer}/>*/}
       {/*<Route path={appRoutePrefix + routes.payment} component={PaymentContainer}/>*/}
-    {/*</Route>*/}
+    </Route>
     <Route path={appRoutePrefix + routes.fourZeroFour} component={PageNotFound}/>
-    <Redirect from='*' to={appRoutePrefix + routes.fourZeroFour} />
+    <Redirect from='*' to={appRoutePrefix + routes.fourZeroFour}/>
   </Route>
 );

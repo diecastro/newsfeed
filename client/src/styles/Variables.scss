@@ -1,20 +1,12 @@
 $regularColor: #777777;
 
-$phoneSwipeColor: #C2CB52;
-$phoneSwipeColorAlternativeColor: #A3A3A6;
 $backgroundColor: #FFFFFF;
 
-$payAnywhereColor: #FD7C24;
-$payAnywhereAlternativeColor: #BF5E04;
 $primaryTextColor: #393A3F;
 $secondaryTextColor: #888C8D;
 $grayColor: #92867c;
 $placeholderTextColor: #393A3F;
 $subNavBackgroundColor: #EFEFF2;
-$mobileTitlePanelBackgroundColor: #393A3F;
-
-$applyColor: #EA7200;
-$applyAlternativeColor: #B75900;
 
 $iconColor: #888C8D;
 $lineColor: #DDDDDD;
@@ -47,7 +39,6 @@ $desktop-width: 1024px;
 $primaryFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $secondaryFontFamily: "Raleway", sans-serif;
 $tertiaryFontFamily: "Roboto", sans-serif;
-$quaternaryFontFamily: "Work Sans", sans-serif;
 $containerSize: 1250px;
 
 %secondaryFontFamilySemiBold {
@@ -100,7 +91,7 @@ $containerSize: 1250px;
 
 %link {
   text-decoration: none;
-  color: $payAnywhereColor;
+  color: $regularColor;
   font-family: $secondaryFontFamily;
   cursor: pointer;
 }
