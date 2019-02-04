@@ -7,20 +7,22 @@ const NewsSchema = new Schema({
   title: {
     type: String
   },
+  preview: {
+    type: String
+  },
   description: {
     type: String
   },
   image: {
     type: String
   },
-  author:{
+  author: {
     type: ObjectId,
-    ref:'author'
+    ref: 'author'
   }
 }, {
   timestamps: true
 });
-
 
 NewsSchema.plugin(mongoosePaginate);
 const NewsModel = mongoose.model('news', NewsSchema);

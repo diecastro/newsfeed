@@ -5,3 +5,17 @@
     height: 140px;
   }
 }
+
+.coverImage {
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+}
+
+.author {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+}

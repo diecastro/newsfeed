@@ -8,6 +8,14 @@ module.exports.getNews = req => new Promise((resolve, reject) => {
     select: {
       __v: 0
     },
+    populate: {
+      path: 'author',
+      select: {
+        name: 1,
+        twitter: 1,
+        _id: 0
+      }
+    },
     page,
     limit: 10
   }).then(resolve).catch(e => {
