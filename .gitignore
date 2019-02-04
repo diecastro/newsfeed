@@ -1,0 +1,28 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+.nyc_output
+
+/app-version.json
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Sass
+.sass-cache/
+*.css.map
+
+# Dependency directory
+node_modules
+
+# Ignore IDE Files
+.idea
+
+
+
+server/log/
+
+# Ignore built JS and CSS
+/client/dist/dist.css
+/client/dist/dist.js

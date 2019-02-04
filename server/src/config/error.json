@@ -1,0 +1,9 @@
+{
+  "notFound": "Not Found",
+  "unauthorized": "Unauthorized",
+  "noResponse": "This service is currently unavailable. Please try again.",
+  "notImplemented": "Not Implemented.",
+  "validateTokenError": "Server Error: Validating Token",
+  "decryptingTokenError": "Server error decrypting token",
+  "tokenValidationError": "Token Validation Error"
+}

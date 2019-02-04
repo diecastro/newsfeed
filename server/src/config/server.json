@@ -1,0 +1,16 @@
+{
+  "secret": "Stuff your eyes with wonder, he said, live as if you'd drop dead in ten seconds",
+  "jwtToken": 20,
+  "payloadLimit" : "10mb",
+  "tokenPeriod": "minutes",
+  "host": "localhost",
+  "name": "News Feed Page",
+  "port": 3001,
+  "protocol": "http:",
+  "requireAuth": true,
+  "apiHostname": "127.0.0.1",
+  "apiPort": "3600",
+  "apiProtocol": "http:",
+  "redisHostname": "127.0.0.1",
+  "jsonType": "application/json"
+}
