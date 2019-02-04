@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const authRouter = require('./routes/api/user');
+const userRouter = require('./routes/api/user');
 const newsRouter = require('./routes/api/news');
 const authorRouter = require('./routes/api/author');
 
@@ -11,7 +11,7 @@ const routes = require('./routes');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
-router.use('/', authRouter);
+router.use('/', userRouter);
 router.use('/', newsRouter);
 router.use('/', authorRouter);
 

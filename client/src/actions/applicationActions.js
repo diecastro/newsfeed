@@ -13,6 +13,19 @@ export function getNews() {
   };
 }
 
+export function login(body) {
+  const endpoint = 'login';
+  return {
+    [CALL_API]: {
+      endpoint: endpoint,
+      authenticated: false,
+      method: 'POST',
+      types: [actionTypes.loginUserRequest, actionTypes.loginUserSuccess, actionTypes.loginUserFailure],
+      body
+    }
+  };
+}
+
 export function cleanReducers() {
   return {
     type: actionTypes.cleanAllReducers

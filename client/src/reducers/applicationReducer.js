@@ -3,7 +3,7 @@ import actionTypes from '../constants/actionTypes';
 const applicationReducer = (
   state = {
     isFetching: true,
-    data: [],
+    data: null,
     page: 1
   }, action) => {
   switch (action.type) {

@@ -10,7 +10,8 @@ const serialize = function (data) {
 
 function callApi(endpoint, method, authenticated, body, encrypted) {
   const encrypt = new JSEncrypt();
-  let token = localStorage.getItem('pa-apply-token') || null;
+  let token = localStorage.getItem('news-feed-token') || null;
+  token = JSON.parse(token).token;
   let dateString = moment().format('ddd, DD MMM YYYY HH:mm:ss Z');
 
   body = typeof body === 'object' ? JSON.stringify(body) : body;
@@ -38,9 +39,8 @@ function callApi(endpoint, method, authenticated, body, encrypted) {
 
   if (authenticated) {
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`
-    }
-    else {
+      config.headers.Authorization = `Bearer ${token}`;
+    } else {
       return Promise.reject({message: 'No token saved'});
     }
   }
@@ -63,8 +63,7 @@ function callApi(endpoint, method, authenticated, body, encrypted) {
         try {
           let errorPayload = JSON.parse(payload);
           return Promise.reject(errorPayload);
-        }
-        catch (err) {
+        } catch (err) {
           return Promise.reject(payload);
         }
       }
@@ -73,8 +72,7 @@ function callApi(endpoint, method, authenticated, body, encrypted) {
       try {
         let error = JSON.parse(err);
         return Promise.reject(error);
-      }
-      catch (e) {
+      } catch (e) {
         return Promise.reject(err);
       }
     });
@@ -115,7 +113,7 @@ export default store => next => action => {
   );
 }
 
-export function helperGetCSRFCookieToken(){
+export function helperGetCSRFCookieToken() {
   let csrfTokenArray = document.cookie.match(new RegExp('csrfToken' + '=([^;]+)'));
   return csrfTokenArray ? csrfTokenArray[1] : null;
 }

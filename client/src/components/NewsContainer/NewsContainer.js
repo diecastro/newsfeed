@@ -16,7 +16,7 @@ export default class NewsContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.getNews();
+    !this.props.application.data && this.props.getNews();
   }
 
   openNewsDialog(news) {

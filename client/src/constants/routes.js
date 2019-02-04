@@ -3,6 +3,7 @@ export default {
   login: 'login',
   admin: 'admin',
   fourZeroFour: '404',
-  news: 'news'
+  news: 'news',
+  authors: 'authors'
 };
 

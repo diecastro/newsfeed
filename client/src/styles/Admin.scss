@@ -1,0 +1,15 @@
+.actionWrapper {
+  display: flex;
+  flex-direction: row;
+
+  & > * {
+    flex: 1 1 auto;
+    margin: 5px;
+  }
+}
+
+.fabAdd {
+  position: absolute!important;
+  bottom: 15px;
+  right: 20px;
+}

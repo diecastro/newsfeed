@@ -5,19 +5,20 @@ const jwt = require('jsonwebtoken');
 const config = require('../../config/app');
 
 router.post('/login', async (req, res, next) => {
+  req.body = JSON.parse(req.body.payload);
   passport.authenticate('userLogin', async (err, user, info) => {
     try {
       if (err || !user) {
-        const error = new Error('An Error occurred');
-        return res.json({message: error.message});
+        const error = new Error(`An error occurred, ${info.message}`);
+        return res.status(500).json({message: error.message});
       }
       req.login(user, {session: false}, async (error) => {
         if (error) return next(error);
         const token = jwt.sign(user, config.server.secret);
-        return res.json({token});
+        return res.json({user, token});
       });
     } catch (error) {
-      return res.json({message: `An error has ocurred, ${error.message}`});
+      return res.status(500).json({message: `An error has ocurred, ${error.message}`});
     }
   })(req, res, next);
 });

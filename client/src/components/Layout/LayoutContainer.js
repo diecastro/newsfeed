@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getNews } from '../../actions/applicationActions';
+import { getNews, login } from '../../actions/applicationActions';
+import { getAuthors, addAuthor } from '../../actions/adminActions';
 import SideMenu from '../Shared/SideMenu';
 
 class LayoutContainer extends Component {
@@ -25,22 +26,27 @@ class LayoutContainer extends Component {
 }
 
 function mapStateToProps(state) {
-
   const {
     application,
-    routing
+    routing,
+    user,
+    data
   } = state;
-
   return {
     application,
-    routing
+    routing,
+    user,
+    data
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    getNews: () => dispatch(getNews())
+    getNews: () => dispatch(getNews()),
+    login: credentials => dispatch(login(credentials)),
+    getAuthors: () => dispatch(getAuthors()),
+    postAuthor: payload => dispatch(addAuthor(payload))
   };
 };
 

@@ -1,17 +1,17 @@
-
 import React from 'react';
 import MaterialButton from '@material-ui/core/Button';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
-const Button = ({ label, primary, href, onClick, raised, disabled }) => (
+const Button = ({label, primary, href, onClick, raised, disabled, color, arrow = true}) => (
   <MaterialButton
-    variant={raised ? 'raised' : 'text'}
+    variant={raised ? 'contained' : 'text'}
     disabled={disabled}
     onClick={onClick}
     href={href}
+    color={color}
   >
-    <div className='btn btn-lg btn-primary btn-inside-parent text-uppercase'>{label}</div>
-    <div className='btn-inside'><KeyboardArrowRight /></div>
+    {label}
+    {arrow && <div style={{display: 'flex'}}><KeyboardArrowRight/></div>}
   </MaterialButton>
 );
 

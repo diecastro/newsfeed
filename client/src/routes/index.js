@@ -1,10 +1,12 @@
 import React from 'react';
-import { Route, Redirect, IndexRoute } from 'react-router';
-import { userIsAuthenticated, userIsAdmin, userIsNotAuthenticated } from './auth';
-import PageNotFound from '../components/PageNotFound/PageNotFound';
+import { Route, Redirect } from 'react-router';
+import { userIsAuthenticated } from './auth';
+import adminContainer from '../components/AdminConsole';
 import Layout from '../components/Layout/LayoutContainer';
+import PageNotFound from '../components/PageNotFound/PageNotFound';
 import NewsContainer from '../components/NewsContainer/NewsContainer';
-
+import SignInContainer from '../components/Auth/SignInContainer';
+import AuthorPage from '../components/AdminConsole/Authors/AuthorPage';
 import routes from '../constants/routes';
 
 const appRoutePrefix = routes.home;
@@ -13,8 +15,9 @@ export default (
   <Route path={appRoutePrefix}>
     <Route path={appRoutePrefix} component={Layout}>
       <Route path={appRoutePrefix + routes.news} component={NewsContainer}/>
-      {/*<Route path={appRoutePrefix + routes.login} component={userIsNotAuthenticated(Login)}/>*/}
-      {/*<Route path={appRoutePrefix + routes.admin} component={userIsAuthenticated(userIsAdmin(Admin))}/>*/}
+      <Route path={appRoutePrefix + routes.login} component={SignInContainer}/>
+      <Route path={appRoutePrefix + routes.admin} component={userIsAuthenticated(adminContainer)}/>
+      <Route path={appRoutePrefix + routes.authors} component={userIsAuthenticated(AuthorPage)}/>
     </Route>
     <Route path={appRoutePrefix + routes.fourZeroFour} component={PageNotFound}/>
     <Redirect from='*' to={appRoutePrefix + routes.fourZeroFour}/>

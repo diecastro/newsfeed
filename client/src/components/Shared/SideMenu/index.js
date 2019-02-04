@@ -17,6 +17,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Home from '@material-ui/icons/Home';
+import { Link } from 'react-router';
+import routes from '../../../constants/routes';
 
 const drawerWidth = 240;
 
@@ -137,10 +140,18 @@ class PersistentDrawerLeft extends Component {
           </div>
           <Divider/>
           <List>
-            <ListItem button>
-              <ListItemIcon><AccountCircle/></ListItemIcon>
-              <ListItemText primary={'Login'}/>
-            </ListItem>
+            <Link to={routes.news}>
+              <ListItem button>
+                <ListItemIcon><Home/></ListItemIcon>
+                <ListItemText primary={'Feed'}/>
+              </ListItem>
+            </Link>
+            <Link to={routes.admin}>
+              <ListItem button>
+                <ListItemIcon><AccountCircle/></ListItemIcon>
+                <ListItemText primary={'Admin Console'}/>
+              </ListItem>
+            </Link>
           </List>
           <Divider/>
 

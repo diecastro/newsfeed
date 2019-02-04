@@ -2,12 +2,13 @@ const AuthorModel = require('../db/models/author');
 const logger = require('./../lib/logger');
 
 module.exports.addAuthor = async payload => {
+  const data = JSON.parse(payload.payload);
   try {
-    await AuthorModel.create(payload);
+    await AuthorModel.create(data);
     return {message: 'Author Added'};
   } catch (e) {
     logger.error(e);
-    throw new Error(`Error adding author ${payload.name}`);
+    throw new Error(`Error adding author ${data.name}`);
   }
 };
 
