@@ -7,6 +7,7 @@ import {
   deleteNews,
   selectNewsId,
   addNews,
+  updateNews,
   clearSelectedNews
 } from '../../actions/adminActions';
 import SideMenu from '../Shared/SideMenu';
@@ -56,7 +57,8 @@ const mapDispatchToProps = (dispatch) => {
     deleteNews: id => dispatch(deleteNews(id)),
     selectNewsId: id => dispatch(selectNewsId(id)),
     clearSelectedNews: () => dispatch(clearSelectedNews()),
-    addNews: payload => dispatch(addNews(payload))
+    addNews: payload => dispatch(addNews(payload)),
+    updateNews: payload => dispatch(updateNews(payload))
   };
 };
 

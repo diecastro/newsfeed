@@ -64,3 +64,16 @@ export function addNews(body) {
     }
   };
 }
+
+export function updateNews(body) {
+  const endpoint = '/news';
+  return {
+    [CALL_API]: {
+      endpoint: endpoint,
+      authenticated: true,
+      method: 'PUT',
+      types: [actionTypes.updateNewsRequest, actionTypes.updateNewsSuccess, actionTypes.updateNewsFailure],
+      body
+    }
+  };
+}

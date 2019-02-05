@@ -28,6 +28,7 @@ class NewsPage extends Component {
     this.closeDeleteDialog = this.closeDeleteDialog.bind(this);
     this.deleteAction = this.deleteAction.bind(this);
     this.selectId = this.selectId.bind(this);
+    this.updateNews = this.updateNews.bind(this);
   }
 
   componentDidMount() {
@@ -50,16 +51,27 @@ class NewsPage extends Component {
 
   submitForm() {
     const that = this;
-    FileUtil.getBase64(that.props.addNewsForm.values.files[0].file).then((result) => {
+    FileUtil.getBase64(that.props.newsForm.values.files[0].file).then((result) => {
       const payload = {
         image: result.base64,
-        title: that.props.addNewsForm.values.title,
-        author: that.props.addNewsForm.values.author,
-        description: that.props.addNewsForm.values.description,
-        preview: that.props.addNewsForm.values.preview
+        title: that.props.newsForm.values.title,
+        author: that.props.newsForm.values.author,
+        description: that.props.newsForm.values.description,
+        preview: that.props.newsForm.values.preview
       };
       that.props.addNews(payload);
     });
+  }
+
+  updateNews() {
+    const payload = {
+      id: this.props.application.selectedNews._id,
+      title: this.props.newsForm.values.title,
+      author: this.props.newsForm.values.author,
+      description: this.props.newsForm.values.description,
+      preview: this.props.newsForm.values.preview
+    };
+    this.props.updateNews(payload);
   }
 
   openDeleteDialog(value) {
@@ -143,7 +155,7 @@ class NewsPage extends Component {
             isVisible={this.state.dialogIsVisible}
             authors={this.props.data.authors}
             closeAction={this.closeDialogVisibility}
-            onSubmit={this.submitForm}
+            onSubmit={!!this.props.application.selectedNews ? this.updateNews : this.submitForm}
             selectedNews={this.props.application.selectedNews}
             isUpdate={!!this.props.application.selectedNews}
           />
@@ -156,7 +168,7 @@ class NewsPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    addNewsForm: state.form.NewsForm
+    newsForm: state.form.NewsForm
   };
 };
 export default connect(mapStateToProps, {})(withRouter(NewsPage));

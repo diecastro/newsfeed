@@ -17,6 +17,9 @@ export default {
   addNewsRequest: 'ADD_NEWS_REQUEST',
   addNewsSuccess: 'ADD_NEWS_SUCCESS',
   addNewsFailure: 'ADD_NEWS_FAILURE',
+  updateNewsRequest: 'UPDATE_NEWS_REQUEST',
+  updateNewsSuccess: 'UPDATE_NEWS_SUCCESS',
+  updateNewsFailure: 'UPDATE_NEWS_FAILURE',
   selectNews: 'SELECT_NEWS',
   clearSelectNews: 'CLEAR_SELECT_NEWS'
 };

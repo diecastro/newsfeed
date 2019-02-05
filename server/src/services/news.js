@@ -48,12 +48,13 @@ module.exports.deleteNews = async payload => {
 };
 
 module.exports.updateNews = async payload => {
+  const data = JSON.parse(payload.payload);
   try {
-    await NewsModel.findOneAndUpdate({_id: payload._id}, payload);
+    await NewsModel.findOneAndUpdate({_id: data.id}, data);
     return {message: 'Record Updated'};
   } catch (e) {
     logger.error(e);
-    throw new Error(`Error updating ${payload.title}`);
+    throw new Error(`Error updating ${data.title}`);
   }
 };
 
