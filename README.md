@@ -21,7 +21,7 @@ https://nodejs.org/en/download/
     $ sudo npm install -g n
     $ sudo n 10.15.0
 
-#### install yarn to manage packages dependecies
+#### install yarn to manage packages dependencies
     
     https://yarnpkg.com/lang/en/docs/install/#mac-stable
 
@@ -48,7 +48,7 @@ SASS (CSS extension language) : http://sass-lang.com/
     $ yarn 
     
 #### start development
-    $ npm run start-dev
+    $ npm start
 
 #### start production
     $ npm start
@@ -70,3 +70,14 @@ Server console logs are written to:
  ```
  /server/logs
  ```
+
+##Seeding the application
+Update the connection string located at /server/src/config/mongo.json.
+
+Install all the dependencies and start the application.
+
+Once you got the application running, navigate to http://localhost:3001/api/applicationSeed/ , this will create an admin user 
+```
+email: 'admin@testData.com',
+password: 'password'
+```

@@ -63,3 +63,17 @@ passport.use(new JWTstrategy({
     done(error);
   }
 }));
+
+module.exports.generateData = async () => {
+  const user = {
+    email: 'admin@testData.com',
+    password: 'password'
+  };
+  try {
+    await UserModel.create(user);
+    return {message: 'User created'};
+  } catch (error) {
+    logger.error(e);
+    throw new Error('Error seeding the application');
+  }
+};

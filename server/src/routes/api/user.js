@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const config = require('../../config/app');
+const userService = require('../../services/user');
 
 router.post('/login', async (req, res, next) => {
   req.body = JSON.parse(req.body.payload);
@@ -26,6 +27,14 @@ router.post('/login', async (req, res, next) => {
 router.post('/signup', passport.authenticate('userSignUp', {session: false}), async (req, res, next) => {
   res.json({
     message: 'User Created'
+  });
+});
+
+router.get('/applicationSeed', async (req, res, next) => {
+  userService.generateData().then(result => {
+    res.json(result);
+  }).catch(error => {
+    res.json({message: `An error has ocurred, ${error.message}`});
   });
 });
 
