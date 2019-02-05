@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import moment from 'moment';
 import Fab from '@material-ui/core/Fab';
-import { Dialog, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
+import { Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
 import Delete from '@material-ui/icons/DeleteForever';
 import Create from '@material-ui/icons/Create';
 import AddIcon from '@material-ui/icons/Add';
@@ -59,7 +59,12 @@ class NewsPage extends Component {
         description: that.props.newsForm.values.description,
         preview: that.props.newsForm.values.preview
       };
-      that.props.addNews(payload);
+      that.props.addNews(payload).then(result => {
+        if (result.type === actionTypes.addNewsSuccess) {
+          this.props.getNews();
+          this.closeDialogVisibility();
+        }
+      });
     });
   }
 
@@ -71,7 +76,12 @@ class NewsPage extends Component {
       description: this.props.newsForm.values.description,
       preview: this.props.newsForm.values.preview
     };
-    this.props.updateNews(payload);
+    this.props.updateNews(payload).then(result => {
+      if (result.type === actionTypes.updateNewsSuccess) {
+        this.props.getNews();
+        this.closeDialogVisibility();
+      }
+    });
   }
 
   openDeleteDialog(value) {

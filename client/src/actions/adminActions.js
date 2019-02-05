@@ -77,3 +77,10 @@ export function updateNews(body) {
     }
   };
 }
+
+export function logoutUser() {
+  localStorage.removeItem('news-feed-token');
+  return {
+    type: actionTypes.logoutUser
+  };
+}

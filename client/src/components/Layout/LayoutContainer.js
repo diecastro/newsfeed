@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getNews, login } from '../../actions/applicationActions';
 import {
-  getAuthors,
   addAuthor,
-  deleteNews,
-  selectNewsId,
   addNews,
-  updateNews,
-  clearSelectedNews
+  clearSelectedNews,
+  deleteNews,
+  getAuthors,
+  logoutUser,
+  selectNewsId,
+  updateNews
 } from '../../actions/adminActions';
 import SideMenu from '../Shared/SideMenu';
 
@@ -58,7 +59,8 @@ const mapDispatchToProps = (dispatch) => {
     selectNewsId: id => dispatch(selectNewsId(id)),
     clearSelectedNews: () => dispatch(clearSelectedNews()),
     addNews: payload => dispatch(addNews(payload)),
-    updateNews: payload => dispatch(updateNews(payload))
+    updateNews: payload => dispatch(updateNews(payload)),
+    logoutUser: () => dispatch(logoutUser())
   };
 };
 

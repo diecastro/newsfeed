@@ -14,6 +14,9 @@ const userReducer = (
       return {...state, isRequesting: false, isLogged: true, token: action.response.token, data: action.response.user};
     case actionTypes.loginUserFailure:
       return {...state, isRequesting: false, isLogged: false, error: action.error};
+    case actionTypes.logoutUser: {
+      return {...state, isLogged: false, data: null};
+    }
     default:
       return state;
   }

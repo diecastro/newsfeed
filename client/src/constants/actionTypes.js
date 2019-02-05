@@ -21,5 +21,6 @@ export default {
   updateNewsSuccess: 'UPDATE_NEWS_SUCCESS',
   updateNewsFailure: 'UPDATE_NEWS_FAILURE',
   selectNews: 'SELECT_NEWS',
-  clearSelectNews: 'CLEAR_SELECT_NEWS'
+  clearSelectNews: 'CLEAR_SELECT_NEWS',
+  logoutUser: 'LOGOUT_USER'
 };

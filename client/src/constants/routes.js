@@ -5,6 +5,7 @@ export default {
   fourZeroFour: '404',
   news: 'news',
   newsAdmin: 'newsAdmin',
-  authors: 'authors'
+  authors: 'authors',
+  users: 'users'
 };
 
