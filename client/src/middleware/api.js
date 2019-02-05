@@ -11,7 +11,7 @@ const serialize = function (data) {
 function callApi(endpoint, method, authenticated, body, encrypted) {
   const encrypt = new JSEncrypt();
   let token = localStorage.getItem('news-feed-token') || null;
-  token = JSON.parse(token).token;
+  token = token && JSON.parse(token).token;
   let dateString = moment().format('ddd, DD MMM YYYY HH:mm:ss Z');
 
   body = typeof body === 'object' ? JSON.stringify(body) : body;

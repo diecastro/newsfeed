@@ -38,3 +38,29 @@ export function deleteNews(body) {
     }
   };
 }
+
+export function selectNewsId(id) {
+  return {
+    type: actionTypes.selectNews,
+    value: id
+  };
+}
+
+export function clearSelectedNews() {
+  return {
+    type: actionTypes.clearSelectNews
+  };
+}
+
+export function addNews(body) {
+  const endpoint = '/news';
+  return {
+    [CALL_API]: {
+      endpoint: endpoint,
+      authenticated: true,
+      method: 'POST',
+      types: [actionTypes.addNewsRequest, actionTypes.addNewsSuccess, actionTypes.addNewsFailure],
+      body
+    }
+  };
+}

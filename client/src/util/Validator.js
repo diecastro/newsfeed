@@ -18,9 +18,23 @@ const Validator = {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])((?=.*\d)|(?=.*[~!@#$%^&*()-=+]))[A-Za-z\d~!@#$%^&*()-=+]{8,}$/;
     return passwordRegex.test(value);
   },
-  validateAddFile: function (values) {
+  validateNewsForm: function (values) {
     let errors = {};
     let that = this;
+
+    const requiredFields = [
+      'title',
+      'preview',
+      'description',
+      'author',
+      'newsImage'
+    ];
+
+    _.map(requiredFields, (field) => {
+      if (this.hasNoValue(values[field])) {
+        errors[field] = that.messages.requiredText;
+      }
+    });
 
     if (values.files) {
       values.files.map((f, i) => {

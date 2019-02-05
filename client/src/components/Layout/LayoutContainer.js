@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getNews, login } from '../../actions/applicationActions';
-import { getAuthors, addAuthor, deleteNews } from '../../actions/adminActions';
+import {
+  getAuthors,
+  addAuthor,
+  deleteNews,
+  selectNewsId,
+  addNews,
+  clearSelectedNews
+} from '../../actions/adminActions';
 import SideMenu from '../Shared/SideMenu';
 
 class LayoutContainer extends Component {
@@ -46,7 +53,10 @@ const mapDispatchToProps = (dispatch) => {
     login: credentials => dispatch(login(credentials)),
     getAuthors: () => dispatch(getAuthors()),
     postAuthor: payload => dispatch(addAuthor(payload)),
-    deleteNews: id => dispatch(deleteNews(id))
+    deleteNews: id => dispatch(deleteNews(id)),
+    selectNewsId: id => dispatch(selectNewsId(id)),
+    clearSelectedNews: () => dispatch(clearSelectedNews()),
+    addNews: payload => dispatch(addNews(payload))
   };
 };
 

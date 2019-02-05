@@ -7,17 +7,17 @@
  */
 
 const chainPromises = chain => new Promise(
-      (resolve, reject) => {
-        chain.push(resolve);
-        chain.reduce((promise, next) => promise.then(next), Promise.resolve());
-      }
-    );
+  (resolve, reject) => {
+    chain.push(resolve);
+    chain.reduce((promise, next) => promise.then(next), Promise.resolve());
+  }
+);
 
-const calculateTotal = (array,property) => array.reduce((prev,next) => prev + (next && next[property] ? parseInt(next[property]) : 0) , 0);
+const findRecord = (data, id) => data.find(record => record._id === id);
 
 const CommonUtil = {
-    chainPromises,
-    calculateTotal
+  chainPromises,
+  findRecord
 };
 
 export default CommonUtil;

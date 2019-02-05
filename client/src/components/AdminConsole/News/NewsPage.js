@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import moment from 'moment';
 import Fab from '@material-ui/core/Fab';
-import { Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
-// import IconButton from '@material-ui/core/IconButton';
+import { Dialog, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
 import Delete from '@material-ui/icons/DeleteForever';
 import Create from '@material-ui/icons/Create';
 import AddIcon from '@material-ui/icons/Add';
@@ -12,9 +11,9 @@ import Loading from '../../Shared/Loading';
 import IconButton from '../../Shared/Button/IconButton';
 import styles from '../../../styles/Admin.scss';
 import actionTypes from '../../../constants/actionTypes';
-import DeleteDialog from './DeleteDialog';
-
-// import AuthorForm from './AuthorForm';
+import DeleteDialog from '../../Shared/DeleteDialog';
+import NewsForm from './NewsForm';
+import FileUtil from '../../../util/FileUtil';
 
 class NewsPage extends Component {
   constructor(props) {
@@ -22,11 +21,13 @@ class NewsPage extends Component {
     this.state = {
       dialogIsVisible: false
     };
-    this.toggleDialogVisibility = this.toggleDialogVisibility.bind(this);
+    this.closeDialogVisibility = this.closeDialogVisibility.bind(this);
+    this.openDialogVisibility = this.openDialogVisibility.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.openDeleteDialog = this.openDeleteDialog.bind(this);
     this.closeDeleteDialog = this.closeDeleteDialog.bind(this);
     this.deleteAction = this.deleteAction.bind(this);
+    this.selectId = this.selectId.bind(this);
   }
 
   componentDidMount() {
@@ -34,22 +35,30 @@ class NewsPage extends Component {
     !this.props.application.data && this.props.getNews();
   }
 
-  toggleDialogVisibility() {
-    this.setState(prevState => ({
-      dialogIsVisible: !prevState.dialogIsVisible
-    }));
+  closeDialogVisibility() {
+    this.setState({
+      dialogIsVisible: false
+    });
+    this.props.clearSelectedNews();
+  }
+
+  openDialogVisibility() {
+    this.setState({
+      dialogIsVisible: true
+    });
   }
 
   submitForm() {
-    this.props.postAuthor({
-      email: this.props.addAuthorForm.values.email,
-      name: this.props.addAuthorForm.values.name,
-      twitter: this.props.addAuthorForm.values.twitter
-    }).then(result => {
-      if (result.type === actionTypes.postAuthorSuccess) {
-        this.props.getAuthors();
-        this.toggleDialogVisibility();
-      }
+    const that = this;
+    FileUtil.getBase64(that.props.addNewsForm.values.files[0].file).then((result) => {
+      const payload = {
+        image: result.base64,
+        title: that.props.addNewsForm.values.title,
+        author: that.props.addNewsForm.values.author,
+        description: that.props.addNewsForm.values.description,
+        preview: that.props.addNewsForm.values.preview
+      };
+      that.props.addNews(payload);
     });
   }
 
@@ -68,6 +77,11 @@ class NewsPage extends Component {
         this.props.getNews();
       }
     });
+  }
+
+  selectId(value) {
+    this.props.selectNewsId(value);
+    this.openDialogVisibility();
   }
 
   render() {
@@ -106,9 +120,7 @@ class NewsPage extends Component {
                       {moment(news.updatedAt).format('MM-DD-Y, h:mm:ss a')}
                     </TableCell>
                     <TableCell className='flex'>
-                      <IconButton>
-                        <Create/>
-                      </IconButton>
+                      <IconButton clickHandler={this.selectId} value={news._id}><Create/></IconButton>
                       <IconButton clickHandler={this.openDeleteDialog} value={news._id}><Delete/></IconButton>
                     </TableCell>
                   </TableRow>
@@ -116,7 +128,7 @@ class NewsPage extends Component {
               </TableBody>
             </Table>
           </Paper>
-          <Fab color='primary' aria-label='Add' className={styles.fabAdd} onClick={this.toggleDialogVisibility}>
+          <Fab color='primary' aria-label='Add' className={styles.fabAdd} onClick={this.openDialogVisibility}>
             <AddIcon/>
           </Fab>
           {this.state.deleteDialogVisible &&
@@ -126,14 +138,16 @@ class NewsPage extends Component {
             deleteAction={this.deleteAction}
           />
           }
-          {/*{this.state.dialogIsVisible &&*/}
-          {/*<AuthorForm*/}
-          {/*isFetching={isFetching}*/}
-          {/*onSubmit={this.submitForm}*/}
-          {/*closeDialog={this.toggleDialogVisibility}*/}
-          {/*isVisible={this.state.dialogIsVisible}*/}
-          {/*submitError={data.error}*/}
-          {/*/>}*/}
+          {this.state.dialogIsVisible &&
+          <NewsForm
+            isVisible={this.state.dialogIsVisible}
+            authors={this.props.data.authors}
+            closeAction={this.closeDialogVisibility}
+            onSubmit={this.submitForm}
+            selectedNews={this.props.application.selectedNews}
+            isUpdate={!!this.props.application.selectedNews}
+          />
+          }
         </div>
       );
     }
@@ -142,7 +156,7 @@ class NewsPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    addNewsForm: state.form.addNewsForm
+    addNewsForm: state.form.NewsForm
   };
 };
 export default connect(mapStateToProps, {})(withRouter(NewsPage));

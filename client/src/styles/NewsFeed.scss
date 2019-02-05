@@ -11,10 +11,12 @@
   .newsCardWrapper {
     display: flex;
     flex-direction: row;
+    flex-flow: wrap;
 
     & > div {
       flex: 1 1 auto;
       margin: 5px;
+      width: 320px;
     }
   }
 }

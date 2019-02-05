@@ -1,4 +1,5 @@
 import actionTypes from '../constants/actionTypes';
+import CommonUtil from '../util/CommonUtil';
 
 const applicationReducer = (
   state = {
@@ -13,6 +14,10 @@ const applicationReducer = (
       return {...state, isFetching: false, data: action.response};
     case actionTypes.getNewsFailure:
       return {...state, isFetching: false};
+    case actionTypes.selectNews:
+      return {...state, selectedNews: CommonUtil.findRecord(state.data.docs, action.value)};
+    case actionTypes.clearSelectNews:
+      return {...state, selectedNews: null};
     default:
       return state;
   }
