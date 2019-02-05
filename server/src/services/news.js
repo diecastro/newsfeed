@@ -17,7 +17,7 @@ module.exports.getNews = req => new Promise((resolve, reject) => {
       }
     },
     page,
-    limit: 10
+    limit: 100
   }).then(resolve).catch(e => {
     logger.info(`Get news: ${e}`);
     reject(e);
@@ -36,8 +36,9 @@ module.exports.addNews = async payload => {
 };
 
 module.exports.deleteNews = async payload => {
+  const data = JSON.parse(payload.payload);
   try {
-    await NewsModel.findOneAndDelete({_id: payload.id});
+    await NewsModel.findOneAndDelete({_id: data.id});
     return {message: 'Record Deleted'};
   } catch (e) {
     logger.error(e);

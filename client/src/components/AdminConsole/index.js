@@ -22,7 +22,7 @@ export default class AdminConsole extends Component {
       <div className={styles.actionWrapper}>
         <Link><Button label={'Add Users'} raised/></Link>
         <Link><Button label={'Logout'} raised color={'secondary'}/></Link>
-        <Link><Button label={'News CRUD'} raised/></Link>
+        <Link to={routes.newsAdmin}><Button label={'News CRUD'} raised/></Link>
         <Link to={routes.authors}><Button label={'Authors CRUD'} raised color={'secondary'}/></Link>
       </div>
     </div>);

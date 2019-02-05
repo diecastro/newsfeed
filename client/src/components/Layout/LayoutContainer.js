@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getNews, login } from '../../actions/applicationActions';
-import { getAuthors, addAuthor } from '../../actions/adminActions';
+import { getAuthors, addAuthor, deleteNews } from '../../actions/adminActions';
 import SideMenu from '../Shared/SideMenu';
 
 class LayoutContainer extends Component {
@@ -11,7 +11,6 @@ class LayoutContainer extends Component {
   }
 
   render() {
-
     const {children} = this.props;
 
     let childComponent = React.cloneElement(children, this.props);
@@ -46,7 +45,8 @@ const mapDispatchToProps = (dispatch) => {
     getNews: () => dispatch(getNews()),
     login: credentials => dispatch(login(credentials)),
     getAuthors: () => dispatch(getAuthors()),
-    postAuthor: payload => dispatch(addAuthor(payload))
+    postAuthor: payload => dispatch(addAuthor(payload)),
+    deleteNews: id => dispatch(deleteNews(id))
   };
 };
 

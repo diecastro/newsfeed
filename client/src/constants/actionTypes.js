@@ -11,4 +11,7 @@ export default {
   postAuthorRequest:'POST_AUTHOR_REQUEST',
   postAuthorSuccess:'POST_AUTHOR_SUCCESS',
   postAuthorFailure:'POST_AUTHOR_FAILURE',
+  deleteNewsRequest:'DELETE_NEWS_REQUEST',
+  deleteNewsSuccess:'DELETE_NEWS_SUCCESS',
+  deleteNewsFailure:'DELETE_NEWS_FAILURE'
 };

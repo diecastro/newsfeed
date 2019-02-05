@@ -54,9 +54,11 @@ class AuthorPage extends Component {
           <Paper>
             <Table>
               <TableHead>
-                <TableCell>Name</TableCell>
-                <TableCell>Email</TableCell>
-                <TableCell>Twitter Handle</TableCell>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Email</TableCell>
+                  <TableCell>Twitter Handle</TableCell>
+                </TableRow>
               </TableHead>
               <TableBody>
                 {data.authors.map(author => (

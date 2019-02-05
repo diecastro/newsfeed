@@ -41,15 +41,15 @@ h5 {
   font-size: 25px;
   font-size: 1.5625rem; }
 
-.Admin__flex___346xb {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+.flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .Admin__flex___346xb {
+    .flex {
       display: block; } }
   @media (max-width: 767px) {
-    .Admin__flex___346xb {
+    .flex {
       display: block; } }
 
 a {
@@ -116,15 +116,15 @@ h5 {
   font-size: 25px;
   font-size: 1.5625rem; }
 
-.PageNotFound__flex___1Uqro {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+.flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .PageNotFound__flex___1Uqro {
+    .flex {
       display: block; } }
   @media (max-width: 767px) {
-    .PageNotFound__flex___1Uqro {
+    .flex {
       display: block; } }
 
 a {
@@ -216,15 +216,15 @@ h5 {
   font-size: 25px;
   font-size: 1.5625rem; }
 
-.NewsFeed__flex___3k6gB {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+.flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .NewsFeed__flex___3k6gB {
+    .flex {
       display: block; } }
   @media (max-width: 767px) {
-    .NewsFeed__flex___3k6gB {
+    .flex {
       display: block; } }
 
 a {
@@ -302,15 +302,15 @@ h5 {
   font-size: 25px;
   font-size: 1.5625rem; }
 
-.NewsCard__flex___L7k-j {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+.flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .NewsCard__flex___L7k-j {
+    .flex {
       display: block; } }
   @media (max-width: 767px) {
-    .NewsCard__flex___L7k-j {
+    .flex {
       display: block; } }
 
 a {
@@ -375,15 +375,15 @@ h5 {
   font-size: 25px;
   font-size: 1.5625rem; }
 
-.Forms__flex___2MlBE {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+.flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .Forms__flex___2MlBE {
+    .flex {
       display: block; } }
   @media (max-width: 767px) {
-    .Forms__flex___2MlBE {
+    .flex {
       display: block; } }
 
 a {

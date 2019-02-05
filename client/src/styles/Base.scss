@@ -37,8 +37,8 @@ h5 {
   @include font-size(25);
 }
 
-.flex {
-  display: flex;
+:global .flex {
+  display: flex!important;
   @include tablet {
     display: block;
   }

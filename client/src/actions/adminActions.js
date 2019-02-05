@@ -25,3 +25,16 @@ export function addAuthor(body) {
     }
   };
 }
+
+export function deleteNews(body) {
+  const endpoint = '/news';
+  return {
+    [CALL_API]: {
+      endpoint: endpoint,
+      authenticated: true,
+      method: 'DELETE',
+      types: [actionTypes.deleteNewsRequest, actionTypes.deleteNewsSuccess, actionTypes.deleteNewsFailure],
+      body
+    }
+  };
+}
