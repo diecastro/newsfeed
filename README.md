@@ -49,9 +49,11 @@ SASS (CSS extension language) : http://sass-lang.com/
     
 #### start development
     $ npm start
+    navigate to http://localhost:3001/news
 
 #### start production
     $ npm start
+    navigate to http://localhost:3001/news
     
 ## Environments
 
